@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrochemical Technologies as Alternative Power Sources</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(180deg, #f8fafc, #eef2f7);
+            color: #1f2933;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #38bdf8);
+            color: white;
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.2rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: #e0f2fe;
+            border-radius: 8px;
+        }
+
+        section {
+            max-width: 1050px;
+            margin: auto;
+            padding: 3rem 2rem;
+            background: white;
+            margin-top: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            margin-top: 1.8rem;
+            color: #1e40af;
+        }
+
+        .equation {
+            background: #f0f9ff;
+            padding: 1.2rem;
+            border-left: 6px solid #38bdf8;
+            margin: 1.2rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.05rem;
+            border-radius: 10px;
+        }
+
+        .diagram {
+            background: #ecfeff;
+            padding: 1.5rem;
+            border-radius: 14px;
+            margin: 2rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 1.6rem;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2563eb, #38bdf8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Electrochemical Technologies as Alternative Power Sources</h1>
+        <p>SCH4U Electrochemistry Culminating | Guiding Question (a)</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#chemistry">Chemistry</a></li>
+            <li><a href="#diagram">Diagram</a></li>
+            <li><a href="#viability">Viability</a></li>
+            <li><a href="#stse">STSE</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+            <li><a href="#sources">Sources</a></li>
+        </ul>
+    </nav>
+
+    <section id="intro">
+        <h2>Introduction</h2>
+        <p>
+            As global energy demands increase and concerns surrounding climate change intensify, society must transition
+            away from fossil fuels toward cleaner and more sustainable energy systems. Electrochemical technologies,
+            such as hydrogen fuel cells, offer a promising alternative because they convert chemical energy directly
+            into electrical energy through redox reactions.
+        </p>
+        <p>
+            This website assesses the viability of electrochemical technologies as alternative power sources and
+            explains their potential impact on society and the environment using principles from Grade 12
+            electrochemistry.
+        </p>
+    </section>
+
+    <section id="chemistry">
+        <h2>Electrochemistry Behind Hydrogen Fuel Cells</h2>
+        <p>
+            A hydrogen fuel cell is an electrochemical cell that continuously generates electricity as long as hydrogen
+            fuel and oxygen are supplied. Unlike combustion engines, fuel cells rely on oxidation-reduction reactions
+            separated at two electrodes, allowing electrons to flow through an external circuit.
+        </p>
+
+        <h3>Electrochemical Reactions</h3>
+        <div class="equation">
+            Anode (oxidation): H₂(g) → 2H⁺(aq) + 2e⁻
+        </div>
+        <div class="equation">
+            Cathode (reduction): ½O₂(g) + 2H⁺(aq) + 2e⁻ → H₂O(l)
+        </div>
+        <div class="equation">
+            Overall reaction: H₂(g) + ½O₂(g) → H₂O(l)
+        </div>
+
+        <p>
+            In simple terms, hydrogen molecules lose electrons at the anode. These electrons travel through an external
+            circuit, producing electrical energy, before being used at the cathode to form water.
+        </p>
+    </section>
+
+    <section id="diagram">
+        <h2>Fuel Cell Diagram Explanation</h2>
+        <div class="diagram">
+            <p><strong>Anode:</strong> Hydrogen gas enters and undergoes oxidation, releasing electrons and hydrogen
+                ions.</p>
+            <p><strong>External Circuit:</strong> Electrons flow through the circuit from anode to cathode, powering
+                electrical devices.</p>
+            <p><strong>Electrolyte:</strong> Allows hydrogen ions to pass through while blocking electrons.</p>
+            <p><strong>Cathode:</strong> Oxygen reacts with hydrogen ions and electrons to form water.</p>
+        </div>
+        <p>
+            This separation of oxidation and reduction reactions is essential because it forces electrons to move
+            through a circuit, which is how electrical energy is produced.
+        </p>
+    </section>
+
+    <section id="viability">
+        <h2>Viability of Electrochemical Power Sources</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Advantages</h3>
+                <ul>
+                    <li>High energy efficiency</li>
+                    <li>No carbon dioxide emissions at point of use</li>
+                    <li>Quiet operation and low maintenance</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Challenges</h3>
+                <ul>
+                    <li>Hydrogen production often depends on fossil fuels</li>
+                    <li>Hydrogen storage poses safety challenges</li>
+                    <li>High infrastructure and material costs</li>
+                </ul>
+            </div>
+        </div>
+        <p>
+            Overall, hydrogen fuel cells are viable as an alternative power source, but their success depends on
+            advancements in sustainable hydrogen production and infrastructure development.
+        </p>
+    </section>
+
+    <section id="stse">
+        <h2>Science, Technology, Society, and Environment (STSE)</h2>
+        <h3>Societal Impact</h3>
+        <p>
+            Hydrogen fuel cells could significantly reduce air pollution in urban areas and increase energy
+            independence. However, public acceptance and safety education are required before widespread adoption.
+        </p>
+
+        <h3>Environmental Impact</h3>
+        <p>
+            Fuel cells produce water as their only direct by-product, greatly reducing greenhouse gas emissions. The
+            environmental impact of hydrogen production and material extraction must still be considered to ensure
+            long-term sustainability.
+        </p>
+    </section>
+
+    <section id="solutions">
+        <h2>Solutions and Future Improvements</h2>
+        <ul>
+            <li>Producing green hydrogen using renewable-powered electrolysis</li>
+            <li>Developing safer hydrogen storage technologies</li>
+            <li>Government investment in clean energy infrastructure</li>
+            <li>Integrating fuel cells with rechargeable battery systems</li>
+        </ul>
+        <p>
+            These strategies would significantly improve the efficiency, safety, and environmental sustainability of
+            electrochemical power technologies.
+        </p>
+    </section>
+
+    <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+            Electrochemical technologies such as hydrogen fuel cells represent a promising solution to the growing
+            global energy challenge. While limitations currently restrict their widespread use, continued scientific
+            research and technological development could allow fuel cells to become a key component of future
+            sustainable energy systems.
+        </p>
+    </section>
+
+    <section id="sources">
+        <h2>Sources</h2>
+        <ul>
+            <li>Ontario Grade 12 Chemistry Textbook</li>
+            <li>Natural Resources Canada – Hydrogen and Fuel Cells</li>
+            <li>U.S. Department of Energy – Fuel Cell Technologies</li>
+            <li>Encyclopaedia Britannica – Electrochemical Cell</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Created for SCH4U Electrochemistry Culminating Task</p>
+    </footer>
+
+</body>
+
+</html>
