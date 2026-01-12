@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electrochemistry Power</title>
+    <title>Electrochemistry Noorin Sakhi</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
     <style>
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
         body {
@@ -32,16 +33,67 @@
 
         @keyframes gradientMove {
             0% {
-                background-position: 0% 50%
+                background-position: 0% 50%;
             }
 
             50% {
-                background-position: 100% 50%
+                background-position: 100% 50%;
             }
 
             100% {
-                background-position: 0% 50%
+                background-position: 0% 50%;
             }
+        }
+
+        /* TOP NAV */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(18px);
+            background: rgba(2, 6, 23, 0.65);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .topbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.9rem 1.2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+            font-size: 0.9rem;
+            opacity: 0.95;
+            cursor: pointer;
+            user-select: none;
+            transition: 0.25s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .pill:hover {
+            transform: translateY(-2px);
+            border-color: rgba(56, 189, 248, 0.55);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
         }
 
         header {
@@ -50,20 +102,33 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 0 1.5rem;
         }
 
         header h1 {
-            font-size: 4.5rem;
+            font-size: clamp(2.6rem, 6vw, 4.8rem);
             font-weight: 900;
             background: linear-gradient(90deg, #38bdf8, #ec4899, #facc15);
             -webkit-background-clip: text;
             color: transparent;
+            margin: 0 0 1rem 0;
+            letter-spacing: 1px;
         }
 
         header p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 1.3rem;
+            max-width: 760px;
+            margin: 0.2rem auto 0;
+            font-size: 1.25rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .header-actions {
+            margin-top: 1.6rem;
+            display: flex;
+            gap: 0.9rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         section {
@@ -73,13 +138,25 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
             border-radius: 30px;
             backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
         }
 
         h2 {
-            font-size: 3rem;
+            font-size: clamp(2.0rem, 4vw, 3.0rem);
             background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
             -webkit-background-clip: text;
             color: transparent;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            margin-top: 2.2rem;
+        }
+
+        p,
+        li {
+            line-height: 1.75;
         }
 
         .grid {
@@ -92,71 +169,231 @@
             padding: 2.5rem;
             border-radius: 25px;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05));
-            transition: 0.4s;
+            transition: 0.35s;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
+        }
+
+        .tag {
+            display: inline-flex;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+            opacity: 0.95;
+            margin-bottom: 0.9rem;
         }
 
         .equation {
-            font-family: monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             background: #020617;
-            padding: 1.5rem;
-            border-radius: 20px;
-            border: 2px solid #38bdf8;
+            padding: 1.25rem 1.4rem;
+            border-radius: 18px;
+            border: 2px solid rgba(56, 189, 248, 0.65);
             margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        figure {
+            margin: 2.5rem 0;
+        }
+
+        figure img {
+            width: 100%;
+            max-width: 650px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 18px;
+            border: 2px solid rgba(56, 189, 248, 0.6);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            will-change: transform;
+        }
+
+        figure img:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 40px 90px rgba(0, 0, 0, 0.75);
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-top: 0.9rem;
         }
 
         /* INTERACTIVE DIAGRAM */
         .diagram-box {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
         }
 
         .diagram-step {
-            padding: 2rem;
+            padding: 1.6rem;
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.1);
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.25s;
+            user-select: none;
+            border: 1px solid rgba(255, 255, 255, 0.10);
         }
 
         .diagram-step:hover {
-            background: rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.25);
+            transform: translateY(-4px);
         }
 
-        /* COMPARISON SLIDER */
-        .compare {
-            position: relative;
-            background: #020617;
-            border-radius: 25px;
+        .hub {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 1.6rem;
+        }
+
+        @media (max-width: 900px) {
+            .hub {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .accordion {
+            display: grid;
+            gap: 1rem;
+        }
+
+        details {
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            padding: 1.1rem 1.2rem;
+            transition: 0.25s;
+        }
+
+        details[open] {
+            background: rgba(56, 189, 248, 0.10);
+            border-color: rgba(56, 189, 248, 0.35);
+            box-shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        summary {
+            cursor: pointer;
+            list-style: none;
+            font-weight: 750;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .mini {
+            opacity: 0.95;
+            margin-top: 0.9rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        @media (max-width: 750px) {
+            .split {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .box {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: rgba(2, 6, 23, 0.45);
+            padding: 1.1rem 1.1rem;
+        }
+
+        .box h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.02rem;
+        }
+
+        .meter {
+            border-radius: 22px;
+            padding: 1.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.06);
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .meter h3 {
+            margin-top: 0;
+        }
+
+        .bar {
+            height: 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.10);
             overflow: hidden;
+            margin: 0.5rem 0 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.10);
         }
 
-        .compare input {
+        .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #38bdf8, #ec4899, #facc15);
+            transition: 0.35s ease;
+        }
+
+        .meter small {
+            opacity: 0.85;
+        }
+
+        /* COMPARE SLIDER */
+        .compare {
+            margin-top: 1.5rem;
+        }
+
+        .compare input[type="range"] {
             width: 100%;
+            margin: 0 0 1.3rem 0;
+            accent-color: #38bdf8;
         }
 
         .compare-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 50% 50%;
+            gap: 1.5rem;
+            align-items: stretch;
         }
 
         .compare-box {
-            padding: 2.5rem;
-        }
-
-        .compare-box h3 {
-            color: #38bdf8
+            padding: 2.2rem;
+            border-radius: 25px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            min-height: 220px;
         }
 
         footer {
             text-align: center;
-            opacity: 0.7;
-            padding: 4rem
+            opacity: 0.75;
+            padding: 4rem;
         }
 
         /* CUSTOM POPUP */
@@ -167,27 +404,39 @@
             display: none;
             align-items: center;
             justify-content: center;
-            z-index: 10;
+            z-index: 100;
+            padding: 1.5rem;
         }
 
         .popup-content {
             background: linear-gradient(135deg, #020617, #0f172a);
-            padding: 3rem;
+            padding: 2.6rem;
             border-radius: 30px;
-            max-width: 500px;
+            max-width: 520px;
+            width: 100%;
             text-align: center;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .popup-content button {
-            margin-top: 2rem;
+            margin-top: 1.6rem;
             padding: 0.8rem 2rem;
             border: none;
             border-radius: 999px;
             background: linear-gradient(90deg, #38bdf8, #ec4899);
             color: white;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
+        }
+
+        .links a {
+            color: #9ae6ff;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -195,131 +444,573 @@
 <body>
     <div class="gradient-bg"></div>
 
+    <!-- Sticky nav for Level 4 organization -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">⚡ Electrochemistry STSE</div>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap; justify-content:flex-end;">
+                <a class="pill" href="#foundations">Foundations</a>
+                <a class="pill" href="#fuelcell">Fuel Cell</a>
+                <a class="pill" href="#stsehub">STSE Hub</a>
+                <a class="pill" href="#works">Works Cited</a>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div>
-            <h1>POWERED BY CHEMISTRY</h1>
-            <p>Hydrogen fuel cells explained clearly — and creatively — at a Grade 12 level.</p>
+            <h1>POWERED BY ELECTROCHEMISTRY</h1>
+            <p>
+                Created by <strong>Noorin Sakhi</strong>- SCH4U
+
+            </p>
+            <p style="margin-top:1rem; font-size:0.95rem; opacity:0.8;">
+                How chemistry powers modern life; from fuel cells to everyday technology.
+            </p>
+
+            <div class="header-actions">
+                <a class="pill" href="#stsehub"> Jump to STSE Answers</a>
+                <a class="pill" href="#fuelcell">🧪 Fuel Cell Chemistry</a>
+            </div>
         </div>
     </header>
 
-    <section>
-        <h2>What Is Electrochemistry?</h2>
+    <details style="max-width:760px; margin:1.5rem auto 0; text-align:left;">
+        <summary style="
+        cursor:pointer;
+        font-size:0.95rem;
+        opacity:0.85;
+        letter-spacing:0.5px;
+        list-style:none;
+      ">
+            Why I built this website ▼
+        </summary>
 
-        <p><strong>Electrochemistry</strong> is the branch of chemistry that studies the relationship between
-            <strong>chemical reactions</strong> and <strong>electrical energy</strong>. In electrochemical processes,
-            chemical reactions cause electrons to move, and this movement of electrons can either <strong>produce
-                electricity</strong> or <strong>use electricity to drive reactions</strong>.
+        <div style="
+        margin-top:1rem;
+        padding:1.4rem 1.6rem;
+        border-radius:18px;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.12);
+        font-size:1rem;
+        line-height:1.7;
+      ">
+
+            <p>
+                I coded this website from scratch using HTML and CSS instead of using a template. I wanted to challenge
+                myself and prove
+                I can explain complex chemistry ideas clearly in a creative way.
+                out.
+                Connecting the chemistry to visuals and real-world examples helped me understand the concepts better,
+                especially fuel cells and redox reactions.
+            </p>
+
+            <p>
+                I’m interested in software engineering, and this project connects chemistry to technology, not just in
+                the topic (fuel
+                cells), but also in how I chose to present it.
+            </p>
+
+            <p style="margin-top:0.8rem; font-size:0.9rem; opacity:0.8;">
+                - Noorin Sakhi, SCH4U Chemistry
+            </p>
+        </div>
+    </details>
+
+
+    <section id="foundations">
+        <h2>Electrochemistry Foundations</h2>
+
+        <figure>
+            <img src="https://ch302.cm.utexas.edu/svg302/cu-zn-cell.svg"
+                alt="Diagram of a copper-zinc electrochemical cell showing anode, cathode, electron flow, and ion movement"
+                loading="lazy">
+            <figcaption>Figure 1: Example electrochemical (galvanic) cell. Notice the anode/cathode labels and the
+                direction of electron flow.</figcaption>
+        </figure>
+
+        <h3>The Basics (SCH4U)</h3>
+        <p>
+            Electrochemistry is based on <strong>redox reactions</strong>, meaning reactions where electrons are
+            transferred.
+            The key idea is that when electrons move, we can capture that movement as <strong>electric current</strong>.
+        </p>
+        <ul>
+            <li><strong>Oxidation</strong> = loss of electrons</li>
+            <li><strong>Reduction</strong> = gain of electrons</li>
+        </ul>
+        <p>
+            Oxidation and reduction always happen together. That’s why we call them <em>redox</em> reactions.
         </p>
 
-        <h3>The Basics (SCH4U Foundations)</h3>
-        <p>Electrochemistry is based on <strong>redox reactions</strong>, which are reactions involving the transfer of
-            electrons.</p>
-        <ul>
-            <li><strong>Oxidation</strong> is the loss of electrons</li>
-            <li><strong>Reduction</strong> is the gain of electrons</li>
-        </ul>
-        <p>Oxidation and reduction always happen together. This is why they are called <em>redox</em> reactions.</p>
+        <figure>
+            <img src="https://eightfoldlearning.com/wp-content/uploads/2020/12/Current-Galvanic-Cell-1024x883.png"
+                alt="Labeled galvanic cell diagram showing electron flow, anode, cathode, and salt bridge"
+                loading="lazy">
+            <figcaption>Figure 2: Galvanic (voltaic) cell diagram showing the salt bridge, anode/cathode, and electron
+                flow through the wire.</figcaption>
+        </figure>
 
-        <h3>Electrochemical Cells</h3>
-        <p>An <strong>electrochemical cell</strong> is a device that uses redox reactions to convert chemical energy
-            into electrical energy or vice versa. There are two main types studied in SCH4U:</p>
-        <ul>
-            <li><strong>Galvanic (Voltaic) Cells:</strong> Use spontaneous redox reactions to generate electricity</li>
-            <li><strong>Electrolytic Cells:</strong> Use electrical energy to force non-spontaneous reactions to occur
-            </li>
-        </ul>
+        <figure>
+            <img src="https://www.siyavula.com/read/za/physical-sciences/grade-12/electrochemical-reactions/images/be2f5e2cca5108c22400f12b5fa1eac5.png"
+                alt="Electrolytic cell diagram with power supply forcing a non-spontaneous reaction" loading="lazy">
+            <figcaption>Figure 3: Electrolytic cell setup. A power source forces a non-spontaneous redox reaction to
+                happen.</figcaption>
+        </figure>
 
         <h3>Electron Flow and Current</h3>
-        <p>In electrochemical cells, electrons always flow from the <strong>anode</strong> to the
-            <strong>cathode</strong> through an external circuit. This flow of electrons is what we observe as an
-            electric current.
+        <p>
+            In electrochemical cells, electrons flow from the <strong>anode</strong> to the <strong>cathode</strong>
+            through an external circuit.
         </p>
         <ul>
-            <li>The <strong>anode</strong> is where oxidation occurs</li>
-            <li>The <strong>cathode</strong> is where reduction occurs</li>
+            <li><strong>Anode</strong> = oxidation</li>
+            <li><strong>Cathode</strong> = reduction</li>
         </ul>
-
-        <h3>Electrochemistry in Real Life</h3>
-        <p>Electrochemistry is used in many real-world applications, including batteries, fuel cells, corrosion,
-            electroplating, and metal extraction. Understanding electrochemistry allows scientists and engineers to
-            design cleaner energy sources, prevent material damage, and develop safer technologies.</p>
-
-        <p>This foundation of electrochemistry is essential for understanding how hydrogen fuel cells work and why they
-            are considered a potential alternative source of power.</p>
-    </section>
-
-    <section>
-        <h2>Why I Built This Website</h2>
-        <p>I built this website <strong>from scratch using HTML and CSS</strong> instead of using a template or website
-            builder. I wanted to challenge myself and show that I can take complex chemistry ideas and explain them
-            clearly using code.</p>
-        <p>I’m interested in <strong>software engineering</strong>, and this project reflects that. Every animation,
-            layout choice, and interactive feature was designed intentionally to help communicate the science better,
-            not just to look cool.</p>
-        <p>This website combines two things I care about: <strong>problem-solving through chemistry</strong> and
-            <strong>creative thinking through coding</strong>. That’s why I chose this format for my culminating.
-        </p>
     </section>
 
     <section>
         <h2>Interactive Fuel Cell Diagram</h2>
         <p>Click each step to understand what is happening inside the fuel cell.</p>
+
         <div class="diagram-box">
             <div class="diagram-step"
-                onclick="openPopup('Hydrogen enters the anode and splits into protons and electrons.')">🔵 Hydrogen In
+                onclick="openPopup('Hydrogen enters the anode and splits into protons and electrons.')">
+                🔵 Hydrogen In
             </div>
-            <div class="diagram-step" onclick="openPopup('Electrons move through a wire, producing electricity.')">⚡
-                Electron Flow</div>
-            <div class="diagram-step" onclick="openPopup('Protons move through the electrolyte.')">🧪 Proton Movement
+            <div class="diagram-step" onclick="openPopup('Electrons move through a wire, producing electricity.')">
+                ⚡ Electron Flow
             </div>
-            <div class="diagram-step" onclick="openPopup('Water is produced at the cathode.')">💧 Water Out</div>
+            <div class="diagram-step" onclick="openPopup('Protons move through the electrolyte (membrane).')">
+                🧪 Proton Movement
+            </div>
+            <div class="diagram-step"
+                onclick="openPopup('Water is produced at the cathode and leaves as the main product.')">
+                💧 Water Out
+            </div>
         </div>
     </section>
 
-    <section>
+    <section id="fuelcell">
         <h2>Electrochemistry Behind Hydrogen Fuel Cells (SCH4U Level)</h2>
 
-        <p>Hydrogen fuel cells are an application of <strong>electrochemical cells</strong>, specifically
-            <strong>galvanic (voltaic) cells</strong>. In a galvanic cell, a spontaneous redox reaction is used to
-            convert chemical energy directly into electrical energy.
+        <p>
+            Hydrogen fuel cells are basically a <strong>galvanic (voltaic) cell</strong>.
+            A <strong>spontaneous</strong> redox reaction releases energy, and instead of losing it as heat,
+            the fuel cell forces electrons to travel through a circuit so we can use the energy as electricity.
         </p>
 
-        <h3>Oxidation and Reduction</h3>
-        <p>Fuel cells rely on a redox reaction. Oxidation and reduction always occur together:</p>
-        <ul>
-            <li><strong>Oxidation</strong> = loss of electrons</li>
-            <li><strong>Reduction</strong> = gain of electrons</li>
-        </ul>
+        <h3>Half-Reactions (What’s oxidized and what’s reduced?)</h3>
 
-        <div class="equation">Anode (Oxidation): H₂(g) → 2H⁺(aq) + 2e⁻</div>
-        <p>At the anode, hydrogen gas is oxidized. The hydrogen molecules lose electrons, producing protons and free
-            electrons. The electrons cannot pass through the electrolyte, so they travel through an external circuit,
-            creating an electric current.</p>
+        <div class="equation">Anode (Oxidation): H₂(g) → 2H⁺ + 2e⁻</div>
+        <p>
+            At the anode, hydrogen is oxidized (it loses electrons). The electrons can’t cross the membrane,
+            so they travel through the wire - that electron flow is the current.
+        </p>
 
-        <div class="equation">Cathode (Reduction): ½O₂(g) + 2H⁺(aq) + 2e⁻ → H₂O(l)</div>
-        <p>At the cathode, oxygen gas is reduced. Oxygen gains electrons and reacts with protons to form liquid water.
-            This shows that the cathode is the site of reduction.</p>
+        <div class="equation">Cathode (Reduction): ½O₂(g) + 2H⁺ + 2e⁻ → H₂O(l)</div>
+        <p>
+            At the cathode, oxygen is reduced (it gains electrons) and combines with H⁺ to form water.
+            That’s why the main product is water - not CO₂.
+        </p>
 
-        <div class="equation">Overall Cell Reaction: H₂(g) + ½O₂(g) → H₂O(l)</div>
-        <p>The overall reaction shows that hydrogen and oxygen combine to form water. The movement of electrons through
-            the circuit is what allows the fuel cell to generate usable electrical energy.</p>
+        <div class="equation">Overall: H₂(g) + ½O₂(g) → H₂O(l)</div>
 
-        <h3>Cell Potential and Efficiency</h3>
-        <p>Hydrogen fuel cells have a relatively high cell potential, which means they can convert a large amount of
-            chemical energy into electrical energy. Unlike combustion engines, fuel cells are not limited by heat
-            losses, making them much more efficient.</p>
-
-        <h3>Environmental and Practical Challenges</h3>
-        <p>Although fuel cells produce only water as a direct product, there are still major challenges:</p>
-        <ul>
-            <li>Most hydrogen is produced using fossil fuels, which involves oxidation of hydrocarbons and produces CO₂
-            </li>
-            <li>Hydrogen must be stored under high pressure, creating safety concerns</li>
-            <li>Catalysts such as platinum are required to increase reaction rate, making fuel cells expensive</li>
-        </ul>
-
-        <p>These issues must be solved before hydrogen fuel cells can be widely used in transportation.</p>
+        <h3>Why fuel cells can be efficient</h3>
+        <p>
+            A fuel cell converts chemical energy to electrical energy more directly than a combustion engine,
+            so it can avoid some heat losses. The problem is not the chemistry, it’s the real-world
+            engineering, safety, and infrastructure needed to make it practical.
+        </p>
     </section>
+
+    <!-- STSE RESEARCH HUB: answers to ALL 7 questions -->
+    <section id="stsehub">
+        <h2>STSE Impact Hub</h2>
+        <p>
+            Electrochemistry sounds like it’s just cells and half-reactions, but it actually shows up everywhere - how
+            we
+            power cars,
+            how our phones work, why bridges rust, and what happens when we throw tech away. I organized the big
+            real-life
+            impacts
+            into topics you can click through. The impact meter updates depending on how serious the safety/environment
+            effects are.
+        </p>
+
+        <div class="hub">
+            <!-- Left: accordion topics -->
+            <div class="accordion">
+
+                <details data-impact="92">
+                    <summary>
+                        Hydrogen fuel cells in cars: what still needs to be solved?
+                        <span style="opacity:0.7;">(click)</span>
+                    </summary>
+
+                    <div class="mini">
+                        <div class="split">
+                            <div class="box">
+                                <h4>What people don’t realize about “only water”</h4>
+                                <p>
+                                    Fuel cells are always advertised like “the only product is water,” which is true at
+                                    the
+                                    tailpipe,
+                                    but there are still problems before they can fully replace gas cars. The biggest one
+                                    is
+                                    <strong>hydrogen storage</strong>. Hydrogen doesn’t take up a lot of mass, so to
+                                    store
+                                    enough for a car,
+                                    you usually need really high pressure tanks. That makes the system more expensive
+                                    and it
+                                    raises safety questions
+                                    (it has to be engineered properly, obviously).
+                                </p>
+                                <p>
+                                    Another issue is just basic convenience. If there aren’t enough <strong>refuelling
+                                        stations</strong>,
+                                    people won’t trust it for daily driving. It’s the same reason electric cars needed
+                                    charging stations before they became more common.
+                                </p>
+                                <p>
+                                    Also, where the hydrogen comes from matters a lot. If it’s produced using fossil
+                                    fuels,
+                                    then you’re still connected to CO₂ emissions,
+                                    just earlier in the process. So fuel cells are way more “worth it” when the hydrogen
+                                    production is cleaner.
+                                </p>
+                            </div>
+
+                            <div class="box">
+                                <h4>Chemistry connection (SCH4U)</h4>
+                                <p>
+                                    Fuel cells work because of redox. Hydrogen is oxidized at the anode and oxygen is
+                                    reduced at the cathode.
+                                    The whole point is forcing electrons through the wire to make current.
+                                </p>
+                                <p>
+                                    But reaction rate matters. Catalysts help speed the reaction up, and if catalysts
+                                    wear
+                                    out or get “poisoned”
+                                    by impurities, the fuel cell performance drops.
+                                </p>
+
+                                <h4>What actually helps</h4>
+                                <ul>
+                                    <li>safer storage + better tank design</li>
+                                    <li>more refuelling stations</li>
+                                    <li>cleaner hydrogen production</li>
+                                    <li>longer lasting catalysts (so it’s cheaper)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p style="opacity:0.9; margin-top:1rem;">
+                            Basically, the chemistry is solid. The hard part is making the whole system practical, safe,
+                            and
+                            actually low-emission overall.
+                        </p>
+                    </div>
+                </details>
+
+                <details data-impact="70">
+                    <summary>
+                        Rechargeable batteries: the “everyday” electrochemistry
+                        <span style="opacity:0.7;">(click)</span>
+                    </summary>
+
+                    <div class="mini">
+                        <div class="split">
+                            <div class="box">
+                                <h4>How much do they store?</h4>
+                                <p>
+                                    “Standard” depends on the device, but most portable electronics use
+                                    <strong>lithium-ion</strong>.
+                                    A phone battery is often around <strong>3000–5000 mAh</strong>, which is why you can
+                                    usually get through
+                                    most of a day before charging again. (Tablets and laptops are bigger, so they store
+                                    more.)
+                                </p>
+                                <p>
+                                    The reason rechargeable batteries changed everything is that you can recharge them
+                                    hundreds of times,
+                                    instead of constantly buying disposables.
+                                </p>
+                            </div>
+
+                            <div class="box">
+                                <h4>Why this matters (STSE)</h4>
+                                <ul>
+                                    <li><strong>Society:</strong> phones, school tech, emergency communication, medical
+                                        devices</li>
+                                    <li><strong>Technology:</strong> better energy density + faster charging</li>
+                                    <li><strong>Environment:</strong> less single-use waste, but more mining + more
+                                        e-waste
+                                        if we don’t recycle</li>
+                                </ul>
+
+                                <h4>What we should do</h4>
+                                <p>
+                                    Make recycling easier and stop treating devices like they’re disposable. Even small
+                                    things like keeping your phone longer
+                                    reduces demand for new mining and new waste.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-impact="85">
+                    <summary>
+                        Battery disposal: small habit, big safety effect
+                        <span style="opacity:0.7;">(click)</span>
+                    </summary>
+
+                    <div class="mini">
+                        <div class="split">
+                            <div class="box">
+                                <h4>Why you can’t just throw them out</h4>
+                                <p>
+                                    Batteries shouldn’t go in regular trash or normal recycling. Some batteries can
+                                    short-circuit if terminals touch metal,
+                                    and that can literally start fires in recycling facilities. Also, damaged batteries
+                                    can
+                                    leak chemicals or metals.
+                                </p>
+                                <p>
+                                    The best method is using <strong>battery drop-offs</strong> (like municipal
+                                    hazardous
+                                    waste programs or battery recycling bins).
+                                    A simple safety step is taping the terminals, especially for lithium-ion and 9V
+                                    batteries.
+                                </p>
+                            </div>
+
+                            <div class="box">
+                                <h4>Real-world impact</h4>
+                                <ul>
+                                    <li><strong>Safety:</strong> reduces facility fires</li>
+                                    <li><strong>Environment:</strong> reduces toxic leaching and recovers metals</li>
+                                    <li><strong>Society:</strong> normalizes responsible tech habits</li>
+                                </ul>
+
+                                <h4>Practical action</h4>
+                                <p>
+                                    A battery drop box at school + a reminder poster is honestly an easy fix that
+                                    actually
+                                    helps.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-impact="88">
+                    <summary>
+                        Corrosion: slow chemistry that can turn into a safety problem
+                        <span style="opacity:0.7;">(click)</span>
+                    </summary>
+
+                    <div class="mini">
+                        <div class="split">
+                            <div class="box">
+                                <h4>Why corrosion is a big deal</h4>
+                                <p>
+                                    Corrosion doesn’t look dramatic at first, but it’s serious because it weakens metal
+                                    over
+                                    time.
+                                    Bridges and road structures depend on metal strength (steel supports or rebar). If
+                                    corrosion keeps happening,
+                                    it can lead to cracking, pieces breaking off, and in extreme cases, failure.
+                                </p>
+                                <p>
+                                    In winter, road salt makes it worse because it helps ions move. That basically
+                                    increases
+                                    conductivity,
+                                    so the electrochemical corrosion process speeds up.
+                                </p>
+                            </div>
+
+                            <div class="box">
+                                <h4>Chemistry connection</h4>
+                                <p>
+                                    Rusting is a redox process. Iron gets oxidized, oxygen gets reduced, and
+                                    water/electrolytes help the reaction continue.
+                                    Prevention works by blocking oxygen/water (coatings), using different materials
+                                    (alloys), or changing the electrochemistry
+                                    (like cathodic protection).
+                                </p>
+
+                                <h4>Practical action</h4>
+                                <p>
+                                    Regular inspections + better coatings + safe handling of chemicals (ventilation/PPE)
+                                    so
+                                    prevention doesn’t create new health issues.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-impact="78">
+                    <summary>
+                        Electroplating waste: why industrial chemistry needs control
+                        <span style="opacity:0.7;">(click)</span>
+                    </summary>
+
+                    <div class="mini">
+                        <div class="split">
+                            <div class="box">
+                                <h4>What the waste can involve</h4>
+                                <p>
+                                    Electroplating uses metal ions in solution, so the waste can include wastewater and
+                                    sludge with
+                                    <strong>heavy metal ions</strong> (like nickel compounds and chromium compounds
+                                    depending on the process).
+                                    If it isn’t treated properly, those metals can end up in soil and water.
+                                </p>
+                                <p>
+                                    There’s also a worker safety side: fumes, splashes, and chemical handling. Even if
+                                    something is “fine” in a controlled lab,
+                                    industrial scale needs strict rules.
+                                </p>
+                            </div>
+
+                            <div class="box">
+                                <h4>What should happen</h4>
+                                <p>
+                                    Wastewater should be treated properly (neutralization/precipitation/filtration
+                                    depending
+                                    on what’s in it),
+                                    and companies should be routinely monitored. It costs money, but it prevents way
+                                    bigger
+                                    damage later.
+                                </p>
+
+                                <h4>STSE link</h4>
+                                <p>
+                                    This is a situation where technology benefits society (plating improves corrosion
+                                    resistance),
+                                    but it must be managed so the environment and workers aren’t the “hidden cost.”
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-impact="95">
+                    <summary>
+                        E-waste: when technology becomes toxic
+                        <span style="opacity:0.7;">(click)</span>
+                    </summary>
+
+                    <div class="mini">
+                        <div class="split">
+                            <div class="box">
+                                <h4>What escapes from e-waste</h4>
+                                <p>
+                                    E-waste can release toxic stuff like <strong>lead</strong>,
+                                    <strong>mercury</strong>,
+                                    and <strong>cadmium</strong>.
+                                    It gets worse when electronics are burned or taken apart improperly because toxins
+                                    can
+                                    get into air, soil, and water.
+                                </p>
+                                <p>
+                                    Health effects depend on exposure, but heavy metals can harm the nervous system
+                                    (especially in kids) and cause long-term issues
+                                    like kidney damage. So it’s not just “bad for the planet”, it’s also a public health
+                                    issue.
+                                </p>
+                            </div>
+
+                            <div class="box">
+                                <h4>What needs to change</h4>
+                                <p>
+                                    We need more collection programs and people actually using them. Also, companies
+                                    should
+                                    design electronics that are easier to recycle
+                                    (or at least easier to take apart safely).
+                                </p>
+                                <h4>Electrochem connection</h4>
+                                <p>
+                                    We use metals in devices for conduction and electrodes, but those same metals
+                                    become
+                                    harmful when they leak into ecosystems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-impact="60">
+                    <summary>
+                        Why braces don’t rust (or rust very slowly)
+                        <span style="opacity:0.7;">(click)</span>
+                    </summary>
+
+                    <div class="mini">
+                        <div class="split">
+                            <div class="box">
+                                <h4>Corrosion resistance in the mouth</h4>
+                                <p>
+                                    Braces are usually stainless steel or titanium alloys. They don’t corrode much
+                                    because
+                                    they form a protective layer on the surface
+                                    called a <strong>passivation (oxide) layer</strong>. That layer blocks the metal
+                                    underneath from reacting further.
+                                </p>
+                                <p>
+                                    The mouth is actually a pretty tough environment because saliva acts like an
+                                    electrolyte, but these alloys are chosen because their oxide layers
+                                    stay stable, so corrosion is very slow.
+                                </p>
+                            </div>
+
+                            <div class="box">
+                                <h4>Chemistry connection</h4>
+                                <p>
+                                    Corrosion is basically an unwanted redox cell happening on the metal surface.
+                                    Passivation reduces electron transfer, so the “corrosion reaction”
+                                    can’t keep going the same way.
+                                </p>
+                                <h4>Small practical note</h4>
+                                <p>
+                                    Keeping good oral hygiene matters too because strong acidity can make corrosion more
+                                    likely.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- Right: impact meter -->
+            <div class="meter">
+                <h3>Impact Meter</h3>
+                <p style="margin-top:0.2rem;">
+                    Click a topic to see how high the safety + environment impact is.
+                </p>
+                <div class="bar">
+                    <div class="fill" id="impactFill"></div>
+                </div>
+                <small id="impactLabel">Click a topic to display impact.</small>
+
+                <div style="margin-top:1.2rem;">
+                    <div class="tag">Big takeaway</div>
+                    <p style="margin-top:0.7rem; opacity:0.9;">
+                        Electrochemistry helps power modern life, but it also creates problems like corrosion and toxic
+                        waste if we ignore the “after effects.”
+                        The best technologies aren’t just the ones that work - they’re the ones we can use safely and
+                        responsibly long term.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section>
         <h2>Fuel Cell vs Gasoline Engine</h2>
@@ -330,17 +1021,17 @@
                 <div class="compare-box">
                     <h3>Fuel Cell</h3>
                     <ul>
-                        <li>High efficiency</li>
-                        <li>No CO₂ emissions</li>
-                        <li>Quiet</li>
+                        <li>High efficiency (chemical → electrical)</li>
+                        <li>Water as direct product (no tailpipe CO₂)</li>
+                        <li>Quiet + smooth</li>
                     </ul>
                 </div>
                 <div class="compare-box">
                     <h3>Gasoline Engine</h3>
                     <ul>
-                        <li>Low efficiency</li>
+                        <li>Lower efficiency (lots of energy lost as heat)</li>
                         <li>CO₂ emissions</li>
-                        <li>Noisy</li>
+                        <li>Noisy + more moving parts</li>
                     </ul>
                 </div>
             </div>
@@ -348,77 +1039,148 @@
     </section>
 
     <section>
-        <h2>STSE & Viability</h2>
+        <h2>STSE & Viability (Summary)</h2>
         <div class="grid">
             <div class="card">
-                <h3>Society</h3>
-                <p>Cleaner air, new energy jobs, and reduced reliance on fossil fuels.</p>
+                <div class="tag">Society</div>
+                <h3>What changes for people?</h3>
+                <p>
+                    Cleaner air, safer battery habits, and new jobs in green energy and recycling.
+                    The big challenge is making the technology affordable and accessible.
+                </p>
             </div>
             <div class="card">
-                <h3>Environment</h3>
-                <p>Water is the only direct product, but hydrogen production must become greener.</p>
+                <div class="tag">Environment</div>
+                <h3>What changes for the planet?</h3>
+                <p>
+                    Less tailpipe pollution is a win, but we still have to solve mining, e-waste, and industrial waste
+                    treatment.
+                    “Clean tech” is only clean if the whole lifecycle is managed.
+                </p>
+            </div>
+            <div class="card">
+                <div class="tag">Technology</div>
+                <h3>What must improve?</h3>
+                <p>
+                    Better catalysts, safer storage systems, greener hydrogen production, and stronger recycling
+                    infrastructure.
+                    The science exists, scaling it responsibly is the hard part.
+                </p>
             </div>
         </div>
     </section>
 
+    <section id="works" class="links">
+        <h2>Sources used: </h2>
+        <ol>
+            <li>
+                Hydrogen fuel cell vehicle challenges (cost, storage, safety, durability, infrastructure):
+                <a href="https://www.mdpi.com/2071-1050/15/15/11501" target="_blank" rel="noopener">MDPI Sustainability
+                    (2023)</a>
+            </li>
+            <li>
+                Battery safety + disposal advice (including taping terminals):
+                <a href="https://www.canada.ca/en/health-canada/services/household-products/battery-safety.html"
+                    target="_blank" rel="noopener">Health Canada (2024)</a>
+            </li>
+            <li>
+                Canadian battery recycling acceptance + drop-off guidance:
+                <a href="https://call2recycle.ca/faqs/" target="_blank" rel="noopener">Call2Recycle Canada (FAQ)</a>
+            </li>
+            <li>
+                Health consequences of exposure to e-waste chemicals:
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8674120/" target="_blank" rel="noopener">PubMed
+                    Central review (2021)</a>
+            </li>
+            <li>
+                Corrosion resistance of orthodontic metals via passive oxide films:
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5074051/" target="_blank" rel="noopener">PubMed
+                    Central (2016)</a>
+            </li>
+        </ol>
+    </section>
+
     <footer>
-        <p>SCH4U Electrochemistry Culminating — Designed to be unforgettable</p>
+        <p>SCH4U Electrochemistry Culminating by Noorin Sakhi ⚡</p>
     </footer>
 
     <div class="popup" id="popup">
         <div class="popup-content">
-            <div id="popupDiagram" style="margin-bottom:1.5rem"></div>
+            <div id="popupDiagram" style="margin-bottom:1.2rem"></div>
             <p id="popupText"></p>
             <button onclick="closePopup()">Got it</button>
         </div>
     </div>
 
     <script>
+        // Popup diagrams (with arrow defs included)
         function openPopup(text) {
             document.getElementById('popupText').innerText = text;
             const diagram = document.getElementById('popupDiagram');
             diagram.innerHTML = '';
 
+            const defs = `
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#ec4899"></path>
+          </marker>
+        </defs>
+      `;
+
             if (text.includes('Hydrogen')) {
                 diagram.innerHTML = `
-    <svg width="300" height="120">
-      <circle cx="60" cy="60" r="25" fill="#38bdf8"/>
-      <text x="48" y="65" fill="black">H₂</text>
-      <line x1="100" y1="60" x2="200" y2="60" stroke="#ec4899" stroke-width="4" marker-end="url(#arrow)"/>
-      <text x="210" y="65" fill="white">Anode</text>
-    </svg>`;
-            }
-            else if (text.includes('Electrons')) {
+          <svg width="320" height="120" viewBox="0 0 320 120">
+            ${defs}
+            <circle cx="60" cy="60" r="25" fill="#38bdf8"/>
+            <text x="48" y="65" fill="black" font-family="Poppins, sans-serif">H₂</text>
+            <line x1="100" y1="60" x2="210" y2="60" stroke="#ec4899" stroke-width="4" marker-end="url(#arrow)"/>
+            <text x="220" y="65" fill="white" font-family="Poppins, sans-serif">Anode</text>
+          </svg>`;
+            } else if (text.includes('Electrons')) {
                 diagram.innerHTML = `
-    <svg width="300" height="120">
-      <circle cx="60" cy="60" r="25" fill="#facc15"/>
-      <text x="52" y="65" fill="black">e⁻</text>
-      <line x1="100" y1="60" x2="240" y2="60" stroke="#facc15" stroke-width="4" stroke-dasharray="8"/>
-      <text x="110" y="40" fill="white">Electric current</text>
-    </svg>`;
-            }
-            else if (text.includes('Protons')) {
+          <svg width="320" height="120" viewBox="0 0 320 120">
+            ${defs}
+            <circle cx="60" cy="60" r="25" fill="#facc15"/>
+            <text x="52" y="65" fill="black" font-family="Poppins, sans-serif">e⁻</text>
+            <line x1="100" y1="60" x2="260" y2="60" stroke="#facc15" stroke-width="4" stroke-dasharray="8" marker-end="url(#arrow)"/>
+            <text x="110" y="40" fill="white" font-family="Poppins, sans-serif">Electric current</text>
+          </svg>`;
+            } else if (text.includes('electrolyte')) {
                 diagram.innerHTML = `
-    <svg width="300" height="120">
-      <circle cx="60" cy="60" r="25" fill="#a78bfa"/>
-      <text x="52" y="65" fill="black">H⁺</text>
-      <rect x="120" y="30" width="80" height="60" rx="10" fill="#38bdf8"/>
-      <text x="130" y="65" fill="black">Membrane</text>
-    </svg>`;
-            }
-            else {
+          <svg width="320" height="120" viewBox="0 0 320 120">
+            ${defs}
+            <circle cx="60" cy="60" r="25" fill="#a78bfa"/>
+            <text x="52" y="65" fill="black" font-family="Poppins, sans-serif">H⁺</text>
+            <rect x="130" y="30" width="120" height="60" rx="12" fill="#38bdf8"/>
+            <text x="144" y="65" fill="black" font-family="Poppins, sans-serif">Membrane</text>
+          </svg>`;
+            } else {
                 diagram.innerHTML = `
-    <svg width="300" height="120">
-      <circle cx="140" cy="60" r="30" fill="#22c55e"/>
-      <text x="125" y="65" fill="black">H₂O</text>
-    </svg>`;
+          <svg width="320" height="120" viewBox="0 0 320 120">
+            <circle cx="160" cy="60" r="30" fill="#22c55e"/>
+            <text x="145" y="65" fill="black" font-family="Poppins, sans-serif">H₂O</text>
+          </svg>`;
             }
 
             document.getElementById('popup').style.display = 'flex';
         }
+
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
         }
+
+        // STSE Impact Meter
+        const fill = document.getElementById('impactFill');
+        const label = document.getElementById('impactLabel');
+
+        document.querySelectorAll('#stsehub details').forEach(d => {
+            d.addEventListener('toggle', () => {
+                if (!d.open) return;
+                const score = Number(d.getAttribute('data-impact') || 0);
+                fill.style.width = score + '%';
+                label.innerText = `Impact Score: ${score}/100 (higher = bigger safety/environment stakes)`;
+            });
+        });
     </script>
 </body>
 
